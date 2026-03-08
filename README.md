@@ -1,3 +1,9 @@
+![React](https://img.shields.io/badge/React-18-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+![CryptoJS](https://img.shields.io/badge/Encryption-AES-green)
+![QR Code](https://img.shields.io/badge/QR-Code-orange)
+![Netlify](https://img.shields.io/badge/Deployed-Netlify-blue)
+
 # Smart Secure QR Generator
 
 🔗 **Live Demo:** https://smart-secure-qr.netlify.app/
@@ -30,7 +36,16 @@ Try the web version here:
 https://smart-secure-qr.netlify.app/
 
 ---
+## Screenshots
 
+### Generate QR
+![Generate](assets/generate.png)
+
+### Decrypt QR
+![Decrypt](assets/decrypt.png)
+
+### Home Page
+![Home](assets/home.png)
 # Tech Stack
 
 ## Desktop Application
