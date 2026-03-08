@@ -1,5 +1,6 @@
 [build]
-  command = "npm run build --prefix web/frontend"
+  # switch to frontend directory, install deps, then build
+  command = "cd web/frontend && npm ci && npm run build"
   publish = "web/frontend/build"
 
 # optionally set environment variables here or in Netlify dashboard
