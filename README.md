@@ -38,14 +38,16 @@ https://smart-secure-qr.netlify.app/
 ---
 ## Screenshots
 
+### Home Page
+![Home](assets/home.png)
+
 ### Generate QR
 ![Generate](assets/generate.png)
 
 ### Decrypt QR
 ![Decrypt](assets/decrypt.png)
 
-### Home Page
-![Home](assets/home.png)
+
 # Tech Stack
 
 ## Desktop Application
