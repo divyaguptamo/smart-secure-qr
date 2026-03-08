@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Decrypt</title>
+  </head>
+  <body>
+    <h1>Decrypt data</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for msg in messages %}
+          <li>{{ msg }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="post" id="decrypt-form">
+      <label for="encrypted">Encrypted text:</label><br>
+      <textarea id="encrypted" name="encrypted" rows="4" cols="50" required></textarea><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <button type="submit">Decrypt</button>
+    </form>
+    {% if result %}
+      <h2>Decrypted</h2>
+      <pre>{{ result }}</pre>
+    {% endif %}
+    <p><a href="{{ url_for('index') }}">Back to generator</a></p>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+# Visual Studio
+*.obj
+*.exe
+*.pdb
+
+# Build artifacts
+/build/
+
+# OS files
+Thumbs.db
+.DS_Store
