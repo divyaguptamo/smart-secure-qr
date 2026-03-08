@@ -4,6 +4,12 @@
   command = "cd web/frontend && npm install && npm run build"
   publish = "web/frontend/build"
 
+# rewrite all paths to index.html so React Router works on Netlify
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 # optionally set environment variables here or in Netlify dashboard
 # [context.production.environment]
 #   REACT_APP_API_BASE = "https://my-backend.example.com"
