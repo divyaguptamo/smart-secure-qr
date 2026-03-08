@@ -1,6 +1,7 @@
 [build]
   # switch to frontend directory, install deps, then build
-  command = "cd web/frontend && npm ci && npm run build"
+  # `npm ci` was failing on Netlify; use plain install which is more tolerant
+  command = "cd web/frontend && npm install && npm run build"
   publish = "web/frontend/build"
 
 # optionally set environment variables here or in Netlify dashboard
