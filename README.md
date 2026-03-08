@@ -113,6 +113,31 @@ communicate via `/api/generate` and `/api/decrypt` routes.
 - For web, build React (`npm run build`) and serve static files from Flask or
   deploy separate frontend hosting with CORS enabled.
 
+### Deploying the frontend to Netlify
+
+1. Run `npm run build` in `web/frontend` to create the `build/` directory.
+2. Push your code to GitHub (Netlify will pull from the `main` branch).
+3. On Netlify, choose **New site → Import an existing project** and select
+   your `divyaguptamo/smart-secure-qr` repository.
+4. Accept the default build command (`npm run build`) and set the publish
+   directory to `web/frontend/build` (or `build` if you move the frontend to
+   the repo root). Environment variables can be defined under **Site settings**.
+5. After deployment youll have a `<your-site>.netlify.app` URL serving the
+   React app.
+
+#### Configuring the API base URL
+
+The React code uses `process.env.REACT_APP_API_BASE` to determine where to send
+requests. By default it assumes the backend is served from the same origin:
+
+```js
+const API_BASE = process.env.REACT_APP_API_BASE || '';
+const axiosInstance = axios.create({ baseURL: API_BASE });
+```
+
+Set `REACT_APP_API_BASE` in Netlify's environment settings to the URL of your
+Flask server (or leave empty if you convert the backend to Netlify Functions).
+
 ## Version Control
 
 This project is intended to be version‑controlled with Git. To push to GitHub:

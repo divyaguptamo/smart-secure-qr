@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+// environment-aware axios instance
+const API_BASE = process.env.REACT_APP_API_BASE || '';
+const axiosInstance = axios.create({ baseURL: API_BASE });
+
 export default function Decrypt() {
   const [encrypted, setEncrypted] = useState('');
   const [password, setPassword] = useState('');
@@ -12,7 +16,7 @@ export default function Decrypt() {
     setError('');
     setResult('');
     try {
-      const resp = await axios.post('/api/decrypt', { encrypted, password });
+      const resp = await axiosInstance.post('/api/decrypt', { encrypted, password });
       if (resp.data.error) {
         setError(resp.data.error);
       } else {

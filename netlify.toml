@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build --prefix web/frontend"
+  publish = "web/frontend/build"
+
+# optionally set environment variables here or in Netlify dashboard
+# [context.production.environment]
+#   REACT_APP_API_BASE = "https://my-backend.example.com"

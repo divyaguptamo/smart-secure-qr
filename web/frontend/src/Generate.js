@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+// allow overriding API host via environment variable (e.g. Netlify)
+const API_BASE = process.env.REACT_APP_API_BASE || '';
+const axiosInstance = axios.create({ baseURL: API_BASE });
+
 export default function Generate() {
   const [form, setForm] = useState({ name:'', phone:'', email:'', age:'', password:'', format:'PNG' });
   const [imageData, setImageData] = useState(null);
@@ -13,7 +17,7 @@ export default function Generate() {
     setError('');
     setImageData(null);
     try {
-      const resp = await axios.post('/api/generate', form);
+      const resp = await axiosInstance.post('/api/generate', form);
       setImageData(resp.data.image);
     } catch (err) {
       setError(err.response?.data?.error || err.message);
